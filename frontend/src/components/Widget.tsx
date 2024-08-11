@@ -11,3 +11,5 @@ const Widget : React.FC<WidgetProps> = ({title, children}) => {
         </div>
     )
 }
+
+export default Widget;
