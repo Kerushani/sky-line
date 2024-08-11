@@ -176,20 +176,19 @@ export default function Home() {
           </button>
         </form>
         {/* Display the users here */}
-        <div className="space-y-2">
-          4
-          {users.map((user) => (
+        {/* <div className="space-y-2"> */}
+          {/* {users.map((user) => (
             <div
               key={user.id}
               className="flex items-center justify-between bg-white"
             >
               <CardComponent card={user} />
-              {/* <button onClick={() => deleteUser(user.id)} className="bg-red-500 hover: bg-red-700">
+              <button onClick={() => deleteUser(user.id)} className="bg-red-500 hover: bg-red-700">
                 Delete User
-              </button> */}
+              </button>
             </div>
-          ))}
-        </div>
+          ))} */}
+        {/* </div> */}
       </div>
     </div>
   );
