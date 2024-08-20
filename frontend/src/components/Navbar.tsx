@@ -30,7 +30,7 @@ const Navbar: FC<NavbarProps> = () => {
             className={`block text-sm py-2 px-3 rounded-md ${
               activeLink === "reports" ? "bg-blue-500 text-white border border-blue-500" : "text-blue-700 hover:bg-blue-100"
             }`}
-            onClick={() => setActiveLink("profile")}
+            onClick={() => setActiveLink("reports")}
           >
             Reports
           </Link>
