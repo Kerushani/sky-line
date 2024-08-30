@@ -55,9 +55,6 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        backgroundImage: {
-          'navy-gradient': 'linear-gradient(to right, #003366, #001f3f)',
-        },
         animation: {
           'orb-bounce': 'orbBounce 10s infinite',
         },
