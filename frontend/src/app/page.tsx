@@ -67,15 +67,14 @@ export default function Home() {
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <Navbar />
       <div className="space y-4 w-full max-w-2xl">
-        <h1 className="text-2xl font-bold text-gray-800 text-center">
-          Flight Cancellations and Delays
-        </h1>
-
         {/* Create user */}
         <form
           onSubmit={createUser}
           className="p-6 bg-white/30 backdrop-blur-md border border-gray-200 rounded-lg shadow-lg max-w-md mx-auto space-y-4"
         >
+                  <h1 className="text-2xl font-bold text-gray-800 text-center">
+          Sign Up
+        </h1>
           <div className="flex flex-col space-y-2">
             <label htmlFor="name" className="text-lg font-medium text-gray-800">
               Name
@@ -123,7 +122,7 @@ export default function Home() {
 
         {/* Update user */}
 
-        <form
+        {/* <form
           onSubmit={handleUpdateUser}
           className="p-6 bg-white/30 backdrop-blur-md border border-gray-200 rounded-lg shadow-lg max-w-md mx-auto space-y-4"
         >
@@ -175,7 +174,7 @@ export default function Home() {
           >
             Update User
           </button>
-        </form>
+        </form> */}
         {/* Display the users here */}
         {/* <div className="space-y-2"> */}
           {/* {users.map((user) => (
