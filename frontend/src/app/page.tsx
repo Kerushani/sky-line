@@ -64,17 +64,17 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="flex flex-col items-center bg-gradient-to-r from-gray-800 via-blue-900 to-gray-800 justify-center min-h-screen p-4">
       <Navbar />
       <div className="space y-4 w-full max-w-2xl">
         {/* Create user */}
         <form
           onSubmit={createUser}
-          className="p-6 bg-white/30 backdrop-blur-md border border-gray-200 rounded-lg shadow-lg max-w-md mx-auto space-y-4"
+          className="p-8 bg-white/30 backdrop-blur-md border-gray-200 rounded-lg shadow-lg max-w-md mx-auto space-y-4"
         >
-                  <h1 className="text-2xl font-bold text-gray-800 text-center">
-          Sign Up
-        </h1>
+          <h1 className="text-2xl font-bold text-gray-800 text-center">
+            Sign Up
+          </h1>
           <div className="flex flex-col space-y-2">
             <label htmlFor="name" className="text-lg font-medium text-gray-800">
               Name
@@ -177,7 +177,7 @@ export default function Home() {
         </form> */}
         {/* Display the users here */}
         {/* <div className="space-y-2"> */}
-          {/* {users.map((user) => (
+        {/* {users.map((user) => (
             <div
               key={user.id}
               className="flex items-center justify-between bg-white"
