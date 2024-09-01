@@ -26,9 +26,6 @@ const deleteRefreshToken = (id) => {
         where: {
             id,
         },
-        data: {
-            revoked: true,
-        },
     });
 };
 exports.deleteRefreshToken = deleteRefreshToken;

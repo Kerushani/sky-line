@@ -23,9 +23,8 @@ router.post("/register", async (req, res, next) => {
       password,
       id: "",
       name: "",
-      refreshTokens: [],
-      createdAt: "",
-      updatedAt: "",
+      createdAt: new Date,
+      updatedAt: new Date,
     });
     const jti : any = uuidv4();
     const { accessToken, refreshToken } = generateTokens(user, jti);

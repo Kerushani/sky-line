@@ -35,9 +35,8 @@ router.post("/register", (req, res, next) => __awaiter(void 0, void 0, void 0, f
             password,
             id: "",
             name: "",
-            refreshTokens: [],
-            createdAt: "",
-            updatedAt: "",
+            createdAt: new Date,
+            updatedAt: new Date,
         });
         const jti = (0, uuid_1.v4)();
         const { accessToken, refreshToken } = (0, jwt_1.generateTokens)(user, jti);
