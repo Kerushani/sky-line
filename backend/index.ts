@@ -4,6 +4,7 @@ import user from "./api/users/users.routes";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
+app.use(express.json());
 app.use("/users", user);
 app.use("/auth", auth);
 app.listen(PORT, () => console.log(`Yayyy server running on port ${PORT} :0`));
