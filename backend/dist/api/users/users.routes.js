@@ -31,7 +31,7 @@ app.get("/users/:id", (req, res) => __awaiter(void 0, void 0, void 0, function* 
     try {
         const user = yield db_1.prisma.user.findUnique({
             where: {
-                id: Number(req.params.id),
+                id: String(req.params.id),
             },
         });
         res.status(200).json(user);
@@ -45,8 +45,13 @@ app.post("/users", (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     try {
         const user = yield db_1.prisma.user.create({
             data: {
+                id: req.body.id,
                 name: req.body.name,
                 email: req.body.email,
+                refreshTokens: req.body.refreshTokens,
+                password: req.body.password,
+                createdAt: req.body.createdAt,
+                updatedAt: req.body.updatedAt
             },
         });
         res.status(201).json(user);
@@ -78,7 +83,7 @@ app.delete("/user/:id", (req, res) => __awaiter(void 0, void 0, void 0, function
     try {
         const user = yield db_1.prisma.user.delete({
             where: {
-                id: Number(req.params.id),
+                id: String(req.params.id),
             },
         });
     }

@@ -2,7 +2,7 @@
 FlightBook
 
 ## Purpose
-...
+A fullstack, typesafe application.
 
 ## Technology Stack
 

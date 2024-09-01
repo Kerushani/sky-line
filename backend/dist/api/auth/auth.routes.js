@@ -39,7 +39,7 @@ router.post("/register", (req, res, next) => __awaiter(void 0, void 0, void 0, f
             createdAt: "",
             updatedAt: "",
         });
-        const jti = (0, uuid_1.uuid4)();
+        const jti = (0, uuid_1.v4)();
         const { accessToken, refreshToken } = (0, jwt_1.generateTokens)(user, jti);
         yield (0, auth_services_1.addRefreshTokenToWhiteList)({ jti, refreshToken, userId: user.id });
         res.json({

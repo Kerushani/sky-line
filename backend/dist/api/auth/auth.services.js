@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.revokeTokens = exports.deleteRefreshToken = exports.findRefreshTokenById = exports.addRefreshTokenToWhiteList = void 0;
 const db_1 = require("../../utils/db");
 const hashToken_1 = require("../../utils/hashToken");
-const addRefreshTokenToWhiteList = ({ jti, refreshToken: string, userId: string }) => {
+const addRefreshTokenToWhiteList = ({ jti, refreshToken, userId }) => {
     return db_1.prisma.refreshToken.create({
         data: {
             id: jti,
@@ -38,7 +38,7 @@ const revokeTokens = (userId) => {
             userId,
         },
         data: {
-            revoke: true,
+            revoked: true,
         },
     }));
 };

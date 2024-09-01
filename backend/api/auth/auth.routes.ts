@@ -1,5 +1,5 @@
 import express from "express";
-import { uuid4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { generateTokens } from "../../utils/jwt";
 import { createUser, findUserByEmail } from "../users/users.services";
 import { addRefreshTokenToWhiteList } from "./auth.services";
@@ -27,7 +27,7 @@ router.post("/register", async (req, res, next) => {
       createdAt: "",
       updatedAt: "",
     });
-    const jti : any = uuid4();
+    const jti : any = uuidv4();
     const { accessToken, refreshToken } = generateTokens(user, jti);
     await addRefreshTokenToWhiteList({ jti, refreshToken, userId: user.id });
 
