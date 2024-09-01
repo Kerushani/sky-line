@@ -1,11 +1,12 @@
 import express from "express";
-import auth from "./api/auth/auth.routes";
-import user from "./api/users/users.routes";
+import userRoute from "../api/users/users.routes";
+import authRoute from "../api/auth/auth.routes";
 
-const app = express();
 const PORT = process.env.PORT || 4000;
-app.use("/users", user);
-app.use("/auth", auth);
+const app = express();
+app.use("/users", userRoute);
+app.use("/auth", authRoute);
+
 app.listen(PORT, () => console.log(`Yayyy server running on port ${PORT} :0`));
 
 // import express from "express";

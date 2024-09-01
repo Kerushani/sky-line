@@ -1,7 +1,13 @@
 import { prisma } from "../../utils/db";
 import { hashToken } from "../../utils/hashToken";
 
-export const addRefreshTokenToWhiteList = ({ jti, refreshToken, userId }) => {
+interface AddRefreshTokenParams {
+  jti: string;
+  refreshToken: string;
+  userId: string;
+}
+
+export const addRefreshTokenToWhiteList = ({ jti, refreshToken, userId}: AddRefreshTokenParams) => {
   return prisma.refreshToken.create({
     data: {
       id: jti,
@@ -11,7 +17,7 @@ export const addRefreshTokenToWhiteList = ({ jti, refreshToken, userId }) => {
   });
 };
 
-export const findRefreshTokenById = (id) => {
+export const findRefreshTokenById = (id: string) => {
   return prisma.refreshToken.findUnique({
     where: {
       id,
@@ -19,7 +25,7 @@ export const findRefreshTokenById = (id) => {
   });
 };
 
-export const deleteRefreshToken = (id) => {
+export const deleteRefreshToken = (id: any) => {
   return prisma.refreshToken.delete({
     where: {
       id,
@@ -30,14 +36,14 @@ export const deleteRefreshToken = (id) => {
   });
 };
 
-export const revokeTokens = (userId) => {
+export const revokeTokens = (userId: string) => {
   return (
     prisma.refreshToken.updateMany({
       where: {
         userId,
       },
       data: {
-        revoke: true,
+        revoked: true,
       },
     })
   );
