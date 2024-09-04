@@ -23,7 +23,7 @@ router.post("/register", (req, res, next) => __awaiter(void 0, void 0, void 0, f
         const { email, password, name } = req.body;
         if (!email || !password || !name) {
             res.status(400);
-            throw new Error("Please provide an email and password");
+            throw new Error("Please provide an email, name, and password");
         }
         const existingUser = yield (0, users_services_1.findUserByEmail)(email);
         if (existingUser) {
