@@ -13,7 +13,7 @@ interface User {
 export default function Home() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
   const [users, setUsers] = useState<User[]>([]);
-  const [newUser, setNewUser] = useState({ name: "", email: "" });
+  const [newUser, setNewUser] = useState({ name: "", email: "", password: "" });
   const [updateUser, setUpdateUser] = useState({ id: "", name: "", email: "" });
 
   //going to fetch users
@@ -111,7 +111,26 @@ export default function Home() {
               required
             />
           </div>
-
+          <div className="flex flex-col space-y-2">
+            <label
+              htmlFor="email"
+              className="text-lg font-medium text-gray-800"
+            >
+              Password
+            </label>
+            <input
+              type="password"
+              id="password"
+              onChange={(e) =>
+                setNewUser({ ...newUser, password: e.target.value })
+              }
+              name="email"
+              value={newUser.password}
+              className="p-3 bg-white/60 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
           <button
             type="submit"
             className="w-full py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"

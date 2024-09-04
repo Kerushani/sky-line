@@ -1,7 +1,9 @@
 import express from "express";
 import auth from "./api/auth/auth.routes";
 import user from "./api/users/users.routes";
+import * as dotenv from 'dotenv';
 
+dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 4000;
 app.use(express.json());

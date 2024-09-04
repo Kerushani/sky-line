@@ -20,8 +20,8 @@ const auth_services_1 = require("./auth.services");
 const router = express_1.default.Router();
 router.post("/register", (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const { email, password } = req.body;
-        if (!email || !password) {
+        const { email, password, name } = req.body;
+        if (!email || !password || !name) {
             res.status(400);
             throw new Error("Please provide an email and password");
         }
@@ -33,8 +33,8 @@ router.post("/register", (req, res, next) => __awaiter(void 0, void 0, void 0, f
         const user = yield (0, users_services_1.createUser)({
             email,
             password,
-            id: "",
-            name: "",
+            id: (0, uuid_1.v4)(),
+            name,
             createdAt: new Date,
             updatedAt: new Date,
         });

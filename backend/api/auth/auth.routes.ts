@@ -8,10 +8,10 @@ const router = express.Router();
 
 router.post("/register", async (req, res, next) => {
   try {
-    const { email, password } = req.body;
-    if (!email || !password) {
+    const { email, password, name } = req.body;
+    if (!email || !password || !name) {
       res.status(400);
-      throw new Error("Please provide an email and password");
+      throw new Error("Please provide an email, name, and password");
     }
     const existingUser = await findUserByEmail(email);
     if (existingUser) {
@@ -21,8 +21,8 @@ router.post("/register", async (req, res, next) => {
     const user = await createUser({
       email,
       password,
-      id: "",
-      name: "",
+      id: uuidv4(),
+      name,
       createdAt: new Date,
       updatedAt: new Date,
     });
