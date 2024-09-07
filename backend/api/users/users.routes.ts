@@ -84,9 +84,11 @@ app.delete("/user/:id", async (req: Request, res: Response) => {
   }
 });
 
+//a protected route
 app.get("/profile", isAuthenticated, async (req, res, next) => {
   try {
     const userId = req.headers["payload"];
+    console.log(userId);
 
     let user: User;
     if (typeof userId === "string") {

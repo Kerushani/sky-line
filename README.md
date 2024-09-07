@@ -15,5 +15,7 @@ A fullstack, typesafe application.
 - **PostgreSQL** - For storing and querying structured data.
 - **Docker** - For containerizing the application, ensuring consistency across different environments and simplifying deployment.
 
+## What's Completed So Far
+
 ## Get Started
 ...
