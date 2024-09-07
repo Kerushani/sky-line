@@ -2,10 +2,12 @@ import bcrypt from "bcrypt";
 import express, { Request, Response } from "express";
 import { prisma } from "../../utils/db";
 import { User } from "@prisma/client";
+import { findUserById } from "./users.services";
+import { isAuthenticated } from "../../middlewares";
 
 const app = express.Router();
 
-// app.use(express.json());
+interface UserWithoutPassword extends Omit<User, "password"> {}
 
 // get all users
 app.get("/users", async (req: Request, res: Response) => {
@@ -42,7 +44,7 @@ app.post("/users", async (req: Request, res: Response) => {
         refreshTokens: req.body.refreshTokens,
         password: req.body.password,
         createdAt: req.body.createdAt,
-        updatedAt: req.body.updatedAt
+        updatedAt: req.body.updatedAt,
       },
     });
     res.status(201).json(user);
@@ -64,7 +66,7 @@ app.put("/users/:id", async (req: Request, res: Response) => {
       },
     });
     res.status(200).json(user);
-  } catch (error:any) {
+  } catch (error: any) {
     res.status(500).json({ message: error.message });
   }
 });
@@ -79,6 +81,39 @@ app.delete("/user/:id", async (req: Request, res: Response) => {
     });
   } catch (error: any) {
     res.status(500).json({ message: error.message });
+  }
+});
+
+app.get("/profile", isAuthenticated, async (req, res, next) => {
+  try {
+    const userId = req.headers["payload"];
+
+    let user: User;
+    if (typeof userId === "string") {
+      user = await findUserById(userId);
+    }
+    if (typeof userId === "object") {
+      user = await findUserById(userId[0]);
+    } else {
+      throw new Error("User data is undefined");
+    }
+    //delete password to prevent it being sent in the response
+    if (user) {
+      const userWithoutPassword: UserWithoutPassword = {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        createdAt: user.createdAt,
+        updatedAt: user.updatedAt,
+      };
+      res.json(userWithoutPassword);
+    } else {
+      res.status(404).json({ message: "User not found" });
+    }
+    // delete user.password;
+    res.json(user);
+  } catch (err) {
+    next(err);
   }
 });
 

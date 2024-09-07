@@ -14,8 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const db_1 = require("../../utils/db");
+const users_services_1 = require("./users.services");
+const middlewares_1 = require("../../middlewares");
 const app = express_1.default.Router();
-// app.use(express.json());
 // get all users
 app.get("/users", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -51,7 +52,7 @@ app.post("/users", (req, res) => __awaiter(void 0, void 0, void 0, function* () 
                 refreshTokens: req.body.refreshTokens,
                 password: req.body.password,
                 createdAt: req.body.createdAt,
-                updatedAt: req.body.updatedAt
+                updatedAt: req.body.updatedAt,
             },
         });
         res.status(201).json(user);
@@ -89,6 +90,40 @@ app.delete("/user/:id", (req, res) => __awaiter(void 0, void 0, void 0, function
     }
     catch (error) {
         res.status(500).json({ message: error.message });
+    }
+}));
+app.get("/profile", middlewares_1.isAuthenticated, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const userId = req.headers["payload"];
+        let user;
+        if (typeof userId === "string") {
+            user = yield (0, users_services_1.findUserById)(userId);
+        }
+        if (typeof userId === "object") {
+            user = yield (0, users_services_1.findUserById)(userId[0]);
+        }
+        else {
+            throw new Error("User data is undefined");
+        }
+        //delete password to prevent it being sent in the response
+        if (user) {
+            const userWithoutPassword = {
+                id: user.id,
+                name: user.name,
+                email: user.email,
+                createdAt: user.createdAt,
+                updatedAt: user.updatedAt,
+            };
+            res.json(userWithoutPassword);
+        }
+        else {
+            res.status(404).json({ message: "User not found" });
+        }
+        // delete user.password;
+        res.json(user);
+    }
+    catch (err) {
+        next(err);
     }
 }));
 exports.default = app;

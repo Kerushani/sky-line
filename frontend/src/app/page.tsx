@@ -34,7 +34,7 @@ export default function Home() {
   const createUser = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${apiUrl}/users`, newUser);
+      const response = await axios.post(`${apiUrl}/auth/register`, newUser);
       setUsers([response.data, ...users]);
     } catch (error) {
       console.error("Uh oh, something went wrong creating the user: ", error);

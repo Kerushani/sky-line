@@ -30,8 +30,10 @@ const express_1 = __importDefault(require("express"));
 const auth_routes_1 = __importDefault(require("./api/auth/auth.routes"));
 const users_routes_1 = __importDefault(require("./api/users/users.routes"));
 const dotenv = __importStar(require("dotenv"));
+// import cors from "cors";
 dotenv.config();
 const app = (0, express_1.default)();
+// app.use(cors)
 const PORT = process.env.PORT || 4000;
 app.use(express_1.default.json());
 app.use("/users", users_routes_1.default);

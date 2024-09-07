@@ -1,3 +1,4 @@
+import { JwtPayload } from "jsonwebtoken";
 import { prisma } from "../../utils/db";
 import { hashToken } from "../../utils/hashToken";
 
@@ -17,7 +18,7 @@ export const addRefreshTokenToWhiteList = ({ jti, refreshToken, userId}: AddRefr
   });
 };
 
-export const findRefreshTokenById = (id: string) => {
+export const findRefreshTokenById = (id: any) => {
   return prisma.refreshToken.findUnique({
     where: {
       id,
