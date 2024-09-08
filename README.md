@@ -32,80 +32,30 @@ To set up and run the project locally, follow these steps:
 
 First, clone the repository to your local machine.
 
-### 2. Set Up the PostgreSQL Database
+### 2. Set Up Docker
 
-The PostgreSQL database is dockerized for ease of setup. To build and run the Docker container:
+To set up and run the Docker containers using Docker Compose, follow these steps:
 
-1. Navigate to the Docker Directory:
+1. **Ensure Docker and Docker Compose are installed** on your machine. If not, you can download and install them from [Docker's official site](https://docs.docker.com/get-docker/).
 
-    ```
-    cd docker
-    ```
+2. **Run Docker Compose** to build and start the containers. Open your terminal, navigate to the root of your project directory, and run:
 
-2. Build the Docker Image:
-
-    ```
-    docker build -t my-postgres-db .
+    ```bash
+    docker-compose up --build
     ```
 
-3. Run the Docker Container:
+   This command will build the Docker images and start the containers as defined in the `docker-compose.yml` file.
 
-    ```
-    docker run -d -p 5432:5432 --name my-postgres-container my-postgres-db
-    ```
+3. **Verify Everything is Running**:
 
-   This will start the PostgreSQL database, accessible at `localhost:5432`. Make sure your Docker setup is configured with the necessary environment variables and configurations.
+    - The frontend should be accessible at [http://localhost:3000](http://localhost:3000).
+    - The backend should be accessible at [http://localhost:4000](http://localhost:4000).
+    - The PostgreSQL database should be accessible at `localhost:5432`.
 
-### 3. Set Up the Frontend
+If you need to stop the containers, use:
 
-1. Navigate to the Frontend Directory:
-
-    ```
-    cd frontend
-    ```
-
-2. Install Dependencies:
-
-    ```
-    npm install
-    ```
-
-3. Run the Development Server:
-
-    ```
-    npm run dev
-    ```
-
-   The frontend will be hosted at [http://localhost:3000](http://localhost:3000).
-
-### 4. Set Up the Backend
-
-1. Navigate to the Backend Directory:
-
-    ```
-    cd ../backend
-    ```
-
-2. Install Dependencies:
-
-    ```
-    npm install
-    ```
-
-3. Start the Server:
-
-    ```
-    npm run start
-    ```
-
-   The backend will be available at [http://localhost:4000](http://localhost:4000).
-
-### 5. Verify Everything is Running
-
-- Ensure the frontend is accessible at [http://localhost:3000](http://localhost:3000).
-- Ensure the backend is accessible at [http://localhost:4000](http://localhost:4000).
-- Verify the PostgreSQL database is running by connecting to `localhost:5432`.
-
+```bash
+docker-compose down
 
 
 
