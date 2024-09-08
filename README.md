@@ -1,12 +1,10 @@
-# Project Title
-Skyline
+# Skyline
 
-## Purpose
-A fullstack, typesafe application.
+This project is a full-stack, type-safe application designed specifically for airlines. 
 
 ## Technology Stack
 
-- **Next.js** - For providing server-side rendering, static site generation, and handling API routes + backend logic.
+- **Next.js** - For providing server-side rendering, static site generation, and handling routes + backend logic.
 - **ReactJS** - For creating a dynamic and interactive user interface with a component-based architecture.
 - **Tailwind CSS** - For utility-first CSS styling, enabling rapid and responsive design with minimal custom CSS.
 - **Typescript** - For adding static typing to JavaScript, improving code quality and maintainability with type safety.
@@ -15,8 +13,6 @@ A fullstack, typesafe application.
 - **PostgreSQL** - For storing and querying structured data.
 - **Docker** - For containerizing the application, ensuring consistency across different environments and simplifying deployment.
 
-## What's Completed So Far
-
 ## Get Started
 
 To set up and run the project locally, follow these steps:
@@ -24,7 +20,6 @@ To set up and run the project locally, follow these steps:
 ### 1. Clone the Repository
 
 First, clone the repository to your local machine.
-
 
 ### 2. Set Up the PostgreSQL Database
 
