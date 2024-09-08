@@ -24,6 +24,9 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        backgroundImage: {
+          'navy-gradient': 'linear-gradient(to right, #003366, #001f3f)', // Custom navy gradient
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -51,6 +54,16 @@ const config = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        animation: {
+          'orb-bounce': 'orbBounce 10s infinite',
+        },
+        keyframes: {
+          orbBounce: {
+            '0%': { transform: 'translateY(-100px) scale(0.5)', opacity: '0.5' },
+            '50%': { transform: 'translateY(100px) scale(1.5)', opacity: '0.8' },
+            '100%': { transform: 'translateY(-100px) scale(0.5)', opacity: '0.5' },
+          },
         },
       },
       borderRadius: {
