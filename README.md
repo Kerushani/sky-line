@@ -15,13 +15,13 @@ Utilized PostgreSQL Docker image.
 
 ## Technology Stack
 
-- **Next.js** - For providing server-side rendering and handling routes.
-- **ReactJS** - For creating a dynamic and interactive user interface with a component-based architecture.
-- **Tailwind CSS** - For utility-first CSS styling, enabling rapid and responsive design with minimal custom CSS.
 - **Typescript** - For adding static typing to JavaScript, improving code quality and maintainability with type safety.
-- **Express.js** - For building the backend.
+- **Next.js**
+- **ReactJS**
+- **Tailwind CSS** - For utility-first CSS styling, enabling rapid and responsive design with minimal custom CSS.
+- **Express.js** 
 - **Prisma ORM** - For type-safe database interactions with PostgreSQL.
-- **PostgreSQL** - For storing and querying structured data.
+- **PostgreSQL**
 - **Docker** - For containerizing the application, ensuring consistency across different environments and simplifying deployment.
 
 ## Get Started
