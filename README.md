@@ -18,4 +18,88 @@ A fullstack, typesafe application.
 ## What's Completed So Far
 
 ## Get Started
-...
+
+To set up and run the project locally, follow these steps:
+
+### 1. Clone the Repository
+
+First, clone the repository to your local machine.
+
+
+### 2. Set Up the PostgreSQL Database
+
+The PostgreSQL database is dockerized for ease of setup. To build and run the Docker container:
+
+1. Navigate to the Docker Directory:
+
+    ```
+    cd docker
+    ```
+
+2. Build the Docker Image:
+
+    ```
+    docker build -t my-postgres-db .
+    ```
+
+3. Run the Docker Container:
+
+    ```
+    docker run -d -p 5432:5432 --name my-postgres-container my-postgres-db
+    ```
+
+   This will start the PostgreSQL database, accessible at `localhost:5432`. Make sure your Docker setup is configured with the necessary environment variables and configurations.
+
+### 3. Set Up the Frontend
+
+1. Navigate to the Frontend Directory:
+
+    ```
+    cd frontend
+    ```
+
+2. Install Dependencies:
+
+    ```
+    npm install
+    ```
+
+3. Run the Development Server:
+
+    ```
+    npm run dev
+    ```
+
+   The frontend will be hosted at [http://localhost:3000](http://localhost:3000).
+
+### 4. Set Up the Backend
+
+1. Navigate to the Backend Directory:
+
+    ```
+    cd ../backend
+    ```
+
+2. Install Dependencies:
+
+    ```
+    npm install
+    ```
+
+3. Start the Server:
+
+    ```
+    npm run start
+    ```
+
+   The backend will be available at [http://localhost:4000](http://localhost:4000).
+
+### 5. Verify Everything is Running
+
+- Ensure the frontend is accessible at [http://localhost:3000](http://localhost:3000).
+- Ensure the backend is accessible at [http://localhost:4000](http://localhost:4000).
+- Verify the PostgreSQL database is running by connecting to `localhost:5432`.
+
+
+
+
