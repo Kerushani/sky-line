@@ -434,7 +434,7 @@ export default function Home() {
         Welcome!
       </div>
       <div className="h-screen flex">
-        <div className="w-1/2 pl-32 pr-2 bg-gray-100 overflow-auto grid gap-2 grid-rows-2">
+        <div className="w-1/2 pl-32 pr-2 bg-gray-100 overflow-auto grid gap-2">
           <Widget title="Flight Delays">
             <Line data={delayLineData} options={delayLineOptions} />
             <Bar data={totalDelaysData} options={totalDelaysOptions} />
@@ -452,7 +452,6 @@ export default function Home() {
             className="row-span-5 bg-blue-50 border-blue-200"
           >
             <div className="flex flex-col space-y-4 p-4">
-              {/* Weather Icon */}
               <div className="flex items-center space-x-4">
                 {/* <img
                   src="/path-to-weather-icon.png" // Replace with actual path
@@ -465,7 +464,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Current Conditions */}
               <div className="flex space-x-4">
                 <div className="flex-1">
                   <h4 className="font-semibold border-b-2 border-blue-700 pb-1 mb-2">
@@ -484,8 +482,6 @@ export default function Home() {
                   <p>Country: USA</p>
                 </div>
               </div>
-
-              {/* Forecast Line Chart */}
               <div className="bg-white p-4 rounded-lg shadow-md">
                 <h4 className="text-lg font-semibold text-blue-700 mb-4">
                   7-Day Forecast
@@ -493,7 +489,6 @@ export default function Home() {
                 <Line data={lineData} options={lineOptions} />
               </div>
 
-              {/* Flights Affected */}
               <div className="text-blue-700">
                 <h4 className="font-semibold border-b-2 border-blue-700 pb-1 mb-2">
                   Flights Affected
