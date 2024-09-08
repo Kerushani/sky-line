@@ -92,9 +92,11 @@ app.delete("/user/:id", (req, res) => __awaiter(void 0, void 0, void 0, function
         res.status(500).json({ message: error.message });
     }
 }));
+//a protected route
 app.get("/profile", middlewares_1.isAuthenticated, (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const userId = req.headers["payload"];
+        console.log(userId);
         let user;
         if (typeof userId === "string") {
             user = yield (0, users_services_1.findUserById)(userId);
