@@ -7,27 +7,16 @@ export default function Home() {
   return (
     <>
       <div className="h-screen flex">
-        <div className="w-1/4 pl-36 bg-gray-100 overflow-auto grid grid-rows-2">
-          <Widget title="Flight Delays" className="col-span-2">
+        <div className="w-1/2 pl-32 pr-2 bg-gray-100 overflow-auto grid gap-2 grid-rows-2">
+          <Widget title="Flight Delays" className="row-span-2">
             <div>Graph of delays</div>
-          </Widget>
-          <Widget title="Flight Cancellations">
-            <div>Graph of cancellations</div>
           </Widget>
         </div>
-        <div className="w-1/4 px-6 pb-6 bg-gray-100 overflow-auto grid grid-rows-2">
-          <Widget title="Flight Delays" className="col-span-2">
+        <div className="w-1/4 pr-2 gap-2 bg-gray-100 gap-2 overflow-auto grid grid-rows-2">
+          <Widget title="Flight Delays">
             <div>Graph of delays</div>
           </Widget>
-          <Widget title="Local Weather">
-            <div>Weather data and forecast</div>
-          </Widget>
-        </div>
-        <div className="w-1/4 px-6 pb-6 bg-gray-100 overflow-auto grid grid-rows-2">
-          <Widget title="Flight Delays" className="col-span-2">
-            <div>Graph of delays</div>
-          </Widget>
-          <Widget title="Local Weather">
+          <Widget title="Local Weather" className="row-span-5">
             <div>Weather data and forecast</div>
           </Widget>
         </div>
