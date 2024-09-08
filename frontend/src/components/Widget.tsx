@@ -11,7 +11,7 @@ const Widget: React.FC<WidgetProps> = ({ title, children, className }) => {
   return (
     <div
       className={classNames(
-        "px-6 pb-6 bg-white/85 backdrop-blur-md border border-gray-200 rounded-lg shadow-lg flex-1 overflow-auto space-y-4",
+        "px-6 pb-6 bg-white/85 backdrop-blur-md border border-gray-200 rounded-lg shadow-lg flex-1 overflow-auto space-y-4 max-h-[calc(100vh-5rem)]",
         className
       )}
     >
