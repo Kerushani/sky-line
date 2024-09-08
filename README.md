@@ -1,4 +1,4 @@
-# Skyline
+# SkyLine
 
 This project is a full-stack, type-safe application designed specifically for airlines. 
 
