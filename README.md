@@ -2,6 +2,17 @@
 
 This project is a full-stack, type-safe application designed specifically for airlines. 
 
+Still in progress
+
+![demo_video](https://github.com/user-attachments/assets/48903b09-e263-4978-9f65-5b986a042f72)
+
+###Authentication and Authorization
+Users can register with secure password hashing. JWT tokens are issued for stateless, secure authentication.
+
+###Dockerized Environment
+Frontend and backend are dockerized.
+Utilized PostgreSQL Docker image.
+
 ## Technology Stack
 
 - **Next.js** - For providing server-side rendering, static site generation, and handling routes + backend logic.
