@@ -32,3 +32,12 @@ model RefreshToken {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model UpcomingFlights {
+  id String @id @unique @default(uuid())
+  flightName String
+  flightNumber String
+  startDestination String
+  endDestination String
+  departureTime String
+}
