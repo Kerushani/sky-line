@@ -4,7 +4,7 @@ This project is a full-stack, type-safe application for airlines.
 
 Still in progress
 
-![Uploading demo_video (1).gif…]()
+https://github.com/user-attachments/assets/9bd4fc36-f2e1-4915-a91c-3b49b31db9d6
 
 ### Authentication and Authorization
 Users can register with secure password hashing. JWT tokens are issued for stateless, secure authentication.
