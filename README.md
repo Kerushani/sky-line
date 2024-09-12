@@ -10,8 +10,8 @@ https://github.com/user-attachments/assets/9bd4fc36-f2e1-4915-a91c-3b49b31db9d6
 Users can register with secure password hashing. JWT tokens are issued for secure, stateless authentication.
 
 ### Dockerized Environment
-Frontend and backend are dockerized.
-Utilized PostgreSQL Docker image.
+The application is dockerized.
+Also, utilized PostgreSQL Docker image.
 
 ## Technology Stack
 
