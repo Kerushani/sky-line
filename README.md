@@ -1,6 +1,6 @@
 # SkyLine
 
-This project is a full-stack, type-safe application for airlines. 
+This project is a full-stack application for airlines. 
 
 Still in progress
 
