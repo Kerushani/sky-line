@@ -15,14 +15,14 @@ Also, utilized PostgreSQL Docker image.
 
 ## Technology Stack
 
-- **Typescript** - For adding static typing to JavaScript, improving code quality and maintainability with type safety.
+- **Typescript** 
 - **Next.js**
 - **ReactJS**
-- **Tailwind CSS** - For utility-first CSS styling, enabling rapid and responsive design with minimal custom CSS.
+- **Tailwind CSS** 
 - **Express.js** 
-- **Prisma ORM** - For type-safe database interactions with PostgreSQL.
+- **Prisma ORM** 
 - **PostgreSQL**
-- **Docker** - For containerizing the application, ensuring consistency across different environments and simplifying deployment.
+- **Docker**
 
 ## Get Started
 
