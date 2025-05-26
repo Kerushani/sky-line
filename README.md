@@ -2,27 +2,18 @@
 
 This project is a full-stack application for airlines. 
 
-Still in progress
-
 https://github.com/user-attachments/assets/9bd4fc36-f2e1-4915-a91c-3b49b31db9d6
-
-### Authentication and Authorization
-Users can register with secure password hashing. JWT tokens are issued for secure, stateless authorization.
-
-### Dockerized Environment
-The application is dockerized.
-Also, utilized PostgreSQL Docker image.
 
 ## Technology Stack
 
-- **Typescript** 
-- **Next.js**
-- **ReactJS**
-- **Tailwind CSS** 
-- **Express.js** 
-- **Prisma ORM** 
-- **PostgreSQL**
-- **Docker**
+- Typescript 
+- Next.js
+  ReactJS
+- Tailwind CSS
+- Express.js 
+- Prisma ORM 
+- PostgreSQL
+- Docker
 
 ## Get Started
 
